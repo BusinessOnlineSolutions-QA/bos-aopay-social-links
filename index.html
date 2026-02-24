@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Official Social Links | BOS & AOPAY</title>
+  <meta name="description" content="Official social media links for BOS Center Pvt. Ltd. and AOPAY Technology Pvt. Ltd." />
+
+  <style>
+    :root{
+      /* Glass UI */
+      --glass: rgba(255,255,255,.14);
+      --stroke: rgba(255,255,255,.22);
+      --stroke2: rgba(255,255,255,.34);
+
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --muted2: rgba(255,255,255,.58);
+
+      --shadow: 0 22px 60px rgba(0,0,0,.38);
+      --shadow2: 0 14px 38px rgba(0,0,0,.26);
+
+      --r: 22px;
+      --r2: 16px;
+
+      /* Brand accents */
+      --bos-blue:#1697ff;
+      --bos-orange:#f59a23;
+
+      --aopay-blue:#1c87ff;
+      --aopay-orange:#f59a23;
+
+      /* Layout */
+      --max: 1120px;
+      --pad: clamp(14px, 3.6vw, 18px);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background:#060810; /* fallback */
+      overflow-x:hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ===== VIDEO BACKGROUND (ORIGINAL — NO COLOR/WHITE OVERLAY) ===== */
+    .bg{
+      position: fixed;
+      inset: 0;
+      z-index: -6;
+      overflow:hidden;
+      background:#000; /* fallback */
+    }
+    .bg video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      /* IMPORTANT: NO FILTERS / NO BRIGHTNESS CHANGES */
+      filter: none;
+      transform: none;
+    }
+
+    /* Only a very light readability tint (not white). Remove if you want 100% raw video. */
+    .soft-tint{
+      position: fixed;
+      inset: 0;
+      z-index: -5;
+      background: rgba(0,0,0,.18);
+      pointer-events:none;
+    }
+
+    /* ===== TOP BAR ===== */
+    .topbar{
+      width:min(var(--max), 94vw);
+      margin: 14px auto 12px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      flex-wrap:wrap;
+    }
+
+    .mini-brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius: 999px;
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.10);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow2);
+      max-width: 100%;
+    }
+    .spark{
+      width:10px;height:10px;border-radius:99px;
+      background: linear-gradient(135deg, var(--bos-blue), var(--bos-orange));
+      box-shadow: 0 0 0 4px rgba(22,151,255,.14);
+      flex: 0 0 auto;
+    }
+    .mini-brand small{
+      font-weight: 950;
+      letter-spacing:.2px;
+      color: var(--text);
+      opacity:.92;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .actions{
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .btn{
+      appearance:none;
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.10);
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 14px;
+      font-weight: 1000;
+      cursor: pointer;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow2);
+      white-space:nowrap;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.14);
+      border-color: var(--stroke2);
+    }
+    .btn:active{ transform: translateY(0px) scale(.99); }
+
+    @media (max-width: 520px){
+      .topbar{ width: 94vw; margin: 12px auto 10px; }
+      .actions{ width:100%; justify-content:space-between; }
+      .btn{ flex: 1 1 auto; text-align:center; }
+    }
+
+    /* ===== MAIN GRID ===== */
+    .wrap{
+      width:min(var(--max), 94vw);
+      margin: 0 auto 26px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: 1fr; gap: 14px; }
+    }
+
+    /* ===== COMPANY GLASS CARDS ===== */
+    .company{
+      position:relative;
+      border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,.22);
+      background: linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.08));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      backdrop-filter: blur(16px);
+    }
+
+    /* Accent line */
+    .accent-line{
+      height: 4px;
+      width: 100%;
+      background: linear-gradient(90deg, var(--bos-blue), var(--bos-orange));
+    }
+    .company[data-brand="aopay"] .accent-line{
+      background: linear-gradient(90deg, var(--aopay-blue), var(--aopay-orange));
+    }
+
+    .head{
+      padding: var(--pad);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255,255,255,.14);
+    }
+
+    .left{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      min-width:0;
+    }
+
+    .logo{
+      width: clamp(132px, 34vw, 180px);
+      height: 54px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(0,0,0,.18);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 10px;
+      box-shadow: 0 12px 26px rgba(0,0,0,.25);
+      overflow:hidden;
+      backdrop-filter: blur(12px);
+      flex: 0 0 auto;
+    }
+    .logo img{
+      max-width: 100%;
+      max-height: 40px;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 14px rgba(0,0,0,.35));
+    }
+
+    .title{
+      min-width:0;
+      display:flex;
+      flex-direction:column;
+      gap: 4px;
+    }
+    .title h2{
+      font-size: 16px;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .title small{
+      color: var(--muted);
+      font-weight: 850;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .badge{
+      display:flex;
+      align-items:center;
+      gap: 8px;
+      font-weight: 1000;
+      font-size: 12px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(0,0,0,.14);
+      backdrop-filter: blur(12px);
+      white-space:nowrap;
+      flex: 0 0 auto;
+    }
+    .badge .dot{
+      width:10px;height:10px;border-radius:99px;
+      background: linear-gradient(135deg, var(--bos-blue), var(--bos-orange));
+      box-shadow: 0 0 0 4px rgba(22,151,255,.14);
+    }
+    .company[data-brand="aopay"] .badge .dot{
+      background: linear-gradient(135deg, var(--aopay-blue), var(--aopay-orange));
+      box-shadow: 0 0 0 4px rgba(28,135,255,.12);
+    }
+
+    .body{
+      padding: var(--pad);
+    }
+
+    /* Social buttons - mobile friendly */
+    .socials{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 10px;
+    }
+    @media (max-width: 560px){
+      .socials{ grid-template-columns: 1fr; }
+    }
+
+    .sbtn{
+      text-decoration:none;
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(255,255,255,.10);
+      border-radius: 16px;
+      padding: 12px 12px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 12px 24px rgba(0,0,0,.18);
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      min-height: 56px; /* tap target */
+    }
+    .sbtn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.14);
+      border-color: rgba(255,255,255,.32);
+    }
+    .sbtn:active{ transform: translateY(0px) scale(.99); }
+
+    .sleft{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      min-width:0;
+    }
+
+    .sicon{
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(0,0,0,.18);
+      display:grid;
+      place-items:center;
+      flex:0 0 auto;
+    }
+    .sicon svg{ width: 20px; height: 20px; }
+
+    .stext{
+      min-width:0;
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+    .stext b{
+      font-size: 14px;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .stext small{
+      color: var(--muted2);
+      font-weight: 850;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .go{
+      font-weight: 1000;
+      opacity:.75;
+      padding: 0 4px;
+      flex:0 0 auto;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .footer{
+      width:min(var(--max), 94vw);
+      margin: 12px auto 22px;
+      color: rgba(255,255,255,.72);
+      font-weight: 850;
+      display:flex;
+      justify-content:space-between;
+      gap: 10px;
+      flex-wrap:wrap;
+      text-shadow: 0 1px 0 rgba(0,0,0,.22);
+    }
+
+    /* Toast */
+    .toast{
+      position: fixed;
+      left: 50%;
+      bottom: 16px;
+      transform: translateX(-50%);
+      background: rgba(10,10,15,.65);
+      border: 1px solid rgba(255,255,255,.20);
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 14px;
+      box-shadow: var(--shadow2);
+      display:none;
+      max-width: min(560px, 92vw);
+      font-weight: 950;
+      backdrop-filter: blur(12px);
+    }
+    .toast.show{ display:block; animation: pop .18s ease; }
+    @keyframes pop{
+      from{ transform: translateX(-50%) translateY(10px); opacity:0; }
+      to{ transform: translateX(-50%) translateY(0px); opacity:1; }
+    }
+
+    a:focus-visible, button:focus-visible{
+      outline: 3px solid rgba(22,151,255,.42);
+      outline-offset: 3px;
+      border-radius: 14px;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .bg video{ display:none; }
+      *{ transition:none !important; animation:none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Background video (original output, no filters) -->
+  <div class="bg" aria-hidden="true">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="https://aopay.in/assets/Home/homeBG.mp4" type="video/mp4" />
+      <!-- Optional local fallback:
+      <source src="./homeBG.mp4" type="video/mp4" />
+      -->
+    </video>
+  </div>
+  <!-- If you want absolutely ZERO overlay, delete this div -->
+  <div class="soft-tint" aria-hidden="true"></div>
+
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="mini-brand">
+      <span class="spark" aria-hidden="true"></span>
+      <small>Official Social Links — BOS & AOPAY</small>
+    </div>
+
+    <div class="actions">
+      <button class="btn" id="copyBtn" type="button">Copy Page Link</button>
+      <button class="btn" id="shareBtn" type="button">Share</button>
+    </div>
+  </div>
+
+  <!-- Company cards -->
+  <main class="wrap">
+    <section class="grid" aria-label="Company social links">
+      <!-- BOS -->
+      <article class="company" data-brand="bos">
+        <div class="accent-line" aria-hidden="true"></div>
+
+        <div class="head">
+          <div class="left">
+            <div class="logo" title="BOS Center Private Limited">
+              <img src="https://bos.center/assets/logo.png" alt="BOS Center Private Limited Logo">
+            </div>
+            <div class="title">
+              <h2>BOS Center Private Limited</h2>
+              <small>Official social channels</small>
+            </div>
+          </div>
+
+          <div class="badge" title="Brand">
+            <span class="dot" aria-hidden="true"></span>
+            BOS
+          </div>
+        </div>
+
+        <div class="body">
+          <div class="socials" id="bosSocials"></div>
+        </div>
+      </article>
+
+      <!-- AOPAY -->
+      <article class="company" data-brand="aopay">
+        <div class="accent-line" aria-hidden="true"></div>
+
+        <div class="head">
+          <div class="left">
+            <div class="logo" title="AOPAY Technology Private Limited">
+              <img src="https://aopay.in/assets/Home/logo.png" alt="AOPAY Technology Private Limited Logo">
+            </div>
+            <div class="title">
+              <h2>AOPAY Technology Private Limited</h2>
+              <small>Official social channels</small>
+            </div>
+          </div>
+
+          <div class="badge" title="Brand">
+            <span class="dot" aria-hidden="true"></span>
+            AOPAY
+          </div>
+        </div>
+
+        <div class="body">
+          <div class="socials" id="aopaySocials"></div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <div class="footer">
+    <span>© <span id="year"></span> BOS Center Pvt. Ltd. & AOPAY Technology Pvt. Ltd.</span>
+    <span>Use only these official links.</span>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    // =========================================================
+    //  ONLY THESE SOCIALS: INSTA / LINKEDIN / FACEBOOK / TWITTER
+    //  Replace href + handle text for each company
+    // =========================================================
+    const DATA = {
+      bos: [
+        { type:"instagram", label:"Instagram", sub:"@yourhandle",  href:"https://www.instagram.com/boscenter.in/?hl=en" },
+        { type:"linkedin",  label:"LinkedIn",  sub:"Company page",  href:"https://www.facebook.com/BOSCenterIND" },
+        { type:"facebook",  label:"Facebook",  sub:"Official page", href:"https://facebook.com/yourpage" },
+        { type:"twitter",   label:"Twitter / X",sub:"@yourhandle",  href:"https://x.com/boscenterin" }
+      ],
+      aopay: [
+        { type:"instagram", label:"Instagram", sub:"@yourhandle",   href:"https://www.instagram.com/aopaytechnology" },
+        { type:"linkedin",  label:"LinkedIn",  sub:"Company page",   href:"https://www.linkedin.com/company/aopay-technology/" },
+        { type:"facebook",  label:"Facebook",  sub:"Official page",  href:"https://www.facebook.com/aopaytechnology/" },
+        { type:"twitter",   label:"Twitter / X",sub:"@yourhandle",   href:"https://x.com/AopayTechnology" }
+      ]
+    };
+
+    // =========================================================
+    //  ICONS (Inline SVG)
+    // =========================================================
+    const ICONS = {
+      instagram: svg(`<rect x="7" y="7" width="10" height="10" rx="3"/><path d="M10.7 12a1.3 1.3 0 1 0 2.6 0 1.3 1.3 0 0 0-2.6 0Z"/><path d="M16.2 7.8h.01"/>`),
+      linkedin: svg(`<path d="M6.5 9.5H4V20h2.5V9.5Z"/><path d="M5.25 4A1.5 1.5 0 1 0 5.3 7 1.5 1.5 0 0 0 5.25 4Z"/><path d="M20 20h-2.5v-5.4c0-1.3-.5-2.2-1.7-2.2-1 0-1.5.7-1.8 1.3-.1.2-.1.5-.1.8V20H11.4V9.5H14v1.4c.4-.7 1.2-1.7 3-1.7 2.2 0 3 1.4 3 4.3V20Z"/>`),
+      facebook: svg(`<path d="M14 8h2V5h-2c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V8c0-.6.4-1 1-1Z"/>`),
+      twitter: svg(`<path d="M18.5 4h-3.2l-3 3.4L9.7 4H5l5.1 6.4L5.2 20H8.4l3.3-3.8L14.7 20H19l-5.4-6.8L18.5 4Z"/>`)
+    };
+
+    function svg(inner){
+      return `
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          ${inner}
+        </svg>
+      `;
+    }
+
+    const $ = (id) => document.getElementById(id);
+
+    function toast(msg){
+      const t = $("toast");
+      t.textContent = msg;
+      t.classList.add("show");
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => t.classList.remove("show"), 2200);
+    }
+
+    function buildSocial(item){
+      const a = document.createElement("a");
+      a.className = "sbtn";
+      a.href = item.href;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+
+      const left = document.createElement("div");
+      left.className = "sleft";
+
+      const icon = document.createElement("div");
+      icon.className = "sicon";
+      icon.innerHTML = ICONS[item.type] || "";
+
+      const text = document.createElement("div");
+      text.className = "stext";
+      const b = document.createElement("b");
+      b.textContent = item.label;
+      const sm = document.createElement("small");
+      sm.textContent = item.sub;
+
+      text.appendChild(b);
+      text.appendChild(sm);
+
+      left.appendChild(icon);
+      left.appendChild(text);
+
+      const go = document.createElement("div");
+      go.className = "go";
+      go.textContent = "›";
+
+      a.appendChild(left);
+      a.appendChild(go);
+      return a;
+    }
+
+    (function init(){
+      $("year").textContent = new Date().getFullYear();
+
+      const bosWrap = $("bosSocials");
+      const aopWrap = $("aopaySocials");
+      bosWrap.innerHTML = "";
+      aopWrap.innerHTML = "";
+
+      DATA.bos.forEach(i => bosWrap.appendChild(buildSocial(i)));
+      DATA.aopay.forEach(i => aopWrap.appendChild(buildSocial(i)));
+
+      $("copyBtn").addEventListener("click", async () => {
+        try{
+          await navigator.clipboard.writeText(window.location.href);
+          toast("Link copied.");
+        }catch(e){
+          toast("Copy failed. Copy from address bar.");
+        }
+      });
+
+      $("shareBtn").addEventListener("click", async () => {
+        const shareData = {
+          title: "Official Social Links — BOS & AOPAY",
+          text: "Official social media links (verified).",
+          url: window.location.href
+        };
+
+        try{
+          if (navigator.share){
+            await navigator.share(shareData);
+          }else{
+            await navigator.clipboard.writeText(window.location.href);
+            toast("Share not supported. Link copied.");
+          }
+        }catch(e){
+          toast("Share cancelled.");
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
